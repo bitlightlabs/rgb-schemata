@@ -1,6 +1,6 @@
 [package]
 name = "rgb-schemata"
-version = "0.11.0-beta.4"
+version = "0.11.0-beta.5"
 description = "Collection of the official RGB smart contract schemata"
 keywords = ["bitcoin", "lightning", "rgb", "smart-contracts", "lnp-bp"]
 categories = ["cryptography::cryptocurrencies"]
@@ -17,9 +17,9 @@ amplify = "4.6.0"
 ascii-armor = "0.2.0"
 strict_encoding = "2.7.0-beta.1"
 strict_types = "2.7.0-beta.2"
-aluvm = { version = "0.11.0-beta.4", features = ["log"] }
-bp-core = "0.11.0-beta.4"
-rgb-std = { version = "0.11.0-beta.4", features = ["serde", "fs"] }
+aluvm = "0.11.0-beta.5"
+bp-core = "0.11.0-beta.5"
+rgb-std = { version = "0.11.0-beta.5", features = ["serde", "fs"] }
 serde = "1.0"
 serde_json = "1.0"
 sha2 = "0.10.8"
@@ -29,13 +29,5 @@ chrono = "0.4.31"
 serde_yaml = "0.9.27"
 
 [features]
-all = []
-
-[patch.crates-io]
-commit_verify = { git = "https://github.com/LNP-BP/client_side_validation", branch = "master" }
-bp-consensus = { git = "https://github.com/BP-WG/bp-core", branch = "master" }
-bp-dbc = { git = "https://github.com/BP-WG/bp-core", branch = "master" }
-bp-seals = { git = "https://github.com/BP-WG/bp-core", branch = "master" }
-bp-core = { git = "https://github.com/BP-WG/bp-core", branch = "master" }
-rgb-core = { git = "https://github.com/RGB-WG/rgb-core", branch = "master" }
-rgb-std = { git = "https://github.com/RGB-WG/rgb-std", branch = "master" }
+all = ["log"]
+log = ["aluvm/log"]
